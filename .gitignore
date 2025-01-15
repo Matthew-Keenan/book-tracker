@@ -16,3 +16,6 @@
 # IDE/editor settings
 .idea/
 .vscode/
+
+# Angular
+**/.angular/cache/

@@ -1,1 +1,48 @@
-<p>{{ hello }}</p>
+<div id="mainContainer">
+    <div id="headerContent">
+        <h1>Hello, User!</h1>
+        <h3>Welcome to the book tracker site</h3>
+    </div>
+    
+    <div id="userSpecificContainer">
+        <h2 class="list-title">Current Reads</h2>
+        <div class="book-card-container">
+            <div *ngFor="let i of books">
+                <ng-container *ngTemplateOutlet="bookCard"></ng-container>
+            </div>
+        </div>
+        
+        <h2 class="list-title">To be Read</h2>
+        <div class="book-card-container">
+            <div *ngFor="let i of books">
+                <ng-container *ngTemplateOutlet="bookCard"></ng-container>
+            </div>
+        </div>
+    </div>
+    
+    <div id="suggestionsContainer">
+        <h2 class="list-title">Trending Books</h2>
+        <div class="book-card-container">
+            <div *ngFor="let i of books">
+                <ng-container *ngTemplateOutlet="bookCard"></ng-container>
+            </div>
+        </div>
+        
+        <h2 class="list-title">New and Noteworthy</h2>
+        <div class="book-card-container">
+            <div *ngFor="let i of books">
+                <ng-container *ngTemplateOutlet="bookCard"></ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #bookCard>
+    <mat-card id="bookCard" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>Book Title</mat-card-title>
+          <mat-card-subtitle>Author Name</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="Default_Book_Cover.webp" alt="Book Cover Image">
+    </mat-card>
+</ng-template>
