@@ -6,16 +6,20 @@
     
     <div id="userSpecificContainer">
         <h2 class="list-title">Current Reads</h2>
-        <div class="book-card-container">
-            <div *ngFor="let i of books">
-                <ng-container *ngTemplateOutlet="bookCard"></ng-container>
+        <div *ngIf="currentReads$.length > 0; else loadingTemplate">
+            <div class="book-card-container">
+                <div *ngFor="let book of currentReads$">
+                    <ng-container *ngTemplateOutlet="bookCard; context: { $implicit: book }"></ng-container>
+                </div>
             </div>
         </div>
         
         <h2 class="list-title">To be Read</h2>
-        <div class="book-card-container">
-            <div *ngFor="let i of books">
-                <ng-container *ngTemplateOutlet="bookCard"></ng-container>
+        <div *ngIf="currentReads$.length > 0; else loadingTemplate">
+            <div class="book-card-container">
+                <div *ngFor="let book of toBeRead$">
+                    <ng-container *ngTemplateOutlet="bookCard; context: { $implicit: book }"></ng-container>
+                </div>
             </div>
         </div>
     </div>
@@ -37,12 +41,16 @@
     </div>
 </div>
 
-<ng-template #bookCard>
-    <mat-card id="bookCard" appearance="outlined">
+<ng-template #loadingTemplate>
+    <p>Loading...</p>
+</ng-template>
+
+<ng-template #bookCard let-book>
+    <mat-card appearance="outlined">
         <mat-card-header>
-          <mat-card-title>Book Title</mat-card-title>
-          <mat-card-subtitle>Author Name</mat-card-subtitle>
+          <mat-card-title>{{ getRandomTitle() }}</mat-card-title>
+          <mat-card-subtitle>{{ getRandomAuthor() }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="Default_Book_Cover.webp" alt="Book Cover Image">
+        <img mat-card-image [src]="getRandomCover()" alt="Book Cover Image">
     </mat-card>
 </ng-template>

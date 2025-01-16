@@ -19,3 +19,6 @@
 
 # Angular
 **/.angular/cache/
+
+#Mac
+.DS_Store

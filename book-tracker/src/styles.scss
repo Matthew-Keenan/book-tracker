@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+$light-blue1: #d6e4f5;
+$light-blue2: #a4c9df;
+$blue1: #7bb7d1;
+$blue2: #4aa0c4;
+$navy-blue: #1d3a6d;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 24px;
+    background-color: $light-blue1;
+}
