@@ -6,7 +6,6 @@ $navy-blue: #1d3a6d;
 
 #mainContainer{
     margin: 24px;
-    background-color: $light-blue1;
 }
 
 #userSpecificContainer{
@@ -22,11 +21,12 @@ $navy-blue: #1d3a6d;
     border: 2px solid $navy-blue;
     padding: 16px;
     border-radius: 16px;
-    box-shadow: 8px 5px 5px $navy-blue;
 }
 
 mat-card:hover {
-    box-shadow: 8px 5px 5px $blue2;
+    box-shadow: 4px 4px 10px $navy-blue, 
+              -4px 4px 10px $navy-blue, 
+              0 4px 10px $navy-blue;
 }
 
 mat-card {
@@ -34,7 +34,7 @@ mat-card {
     height: 300px;
     display: flex;
     flex-direction: column;
-    background-color: $blue1;
+    background-color: $light-blue1;
     padding: 8px;
     border: 1px solid $navy-blue;
 
