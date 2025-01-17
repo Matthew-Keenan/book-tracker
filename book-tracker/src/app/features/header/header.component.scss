@@ -1,0 +1,29 @@
+$light-blue1: #d6e4f5;
+$light-blue2: #a4c9df;
+$blue1: #7bb7d1;
+$blue2: #4aa0c4;
+$navy-blue: #1d3a6d;
+
+#buttonContainter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $light-blue1;
+}
+
+#mainNavBtns {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#loginBtn {
+    margin-left: auto;
+}
+
+#primaryIcon {
+    width: 64px;
+    height: 64px;
+}
