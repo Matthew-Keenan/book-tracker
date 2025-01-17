@@ -1,3 +1,9 @@
+$light-blue1: #d6e4f5;
+$light-blue2: #a4c9df;
+$blue1: #7bb7d1;
+$blue2: #4aa0c4;
+$navy-blue: #1d3a6d;
+
 #mainContainer{
     margin: 24px;
 }
@@ -12,24 +18,58 @@
     overflow-x: auto;
     flex-wrap: nowrap;
     gap: 16px;
-    border: 1px solid black;
+    border: 2px solid $navy-blue;
     padding: 16px;
     border-radius: 16px;
 }
 
-#bookCard {
+mat-card:hover {
+    box-shadow: 4px 4px 10px $navy-blue, 
+              -4px 4px 10px $navy-blue, 
+              0 4px 10px $navy-blue;
+}
+
+mat-card {
     width: 200px;
     height: 300px;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow: hidden;
+    background-color: $light-blue1;
+    padding: 8px;
+    border: 1px solid $navy-blue;
+
+    .mat-mdc-card-header {
+        display: flex;
+        flex-direction: column;
+        height: 25%;
+        padding: 0 8px 0 8px;
+        box-sizing: border-box;
+
+        mat-card-title {
+            flex: 0 0 60%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 0;
+            -webkit-box-orient: vertical;
+            white-space: normal; 
+        }
+    
+        mat-card-subtitle {
+            flex: 0 0 40%;         
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
 
     img {
         width: 100%;
         height: auto;
         max-height: 75%;
+        padding: 8px;
         object-fit: contain;
+        margin-top: 8px;
     }
 }
